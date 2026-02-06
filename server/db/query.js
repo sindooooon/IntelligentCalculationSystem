@@ -114,7 +114,7 @@ async function getPointList(isParent, isTsumo, hanId) {
 async function insertResult({gameId, wind, kyoku, homba, kyotaku, end, east_point, south_point, west_point, north_point, tobi_player, tobi_get}) {
     const sql = `
       INSERT INTO kyoku
-      (game_id, wind, kyoku, homba, kyotaku, end, east_point, south_point, west_point, north_point, tobi_player, tobi_get)
+      (game_id, wind, kyoku, homba, kyotaku, is_end, east_point, south_point, west_point, north_point, tobi_player, tobi_get)
       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
     `;
 
@@ -162,7 +162,7 @@ async function getResult() {
   FROM game 
     INNER JOIN kyoku
     ON id = game_id
-  WHERE kyoku.end = 1
+  WHERE kyoku.is_end = 1
   ORDER BY game_id DESC
   LIMIT 1;
   `;
