@@ -8,6 +8,7 @@ async function insertGame({ players, uma, westIn, tobi}) {
       INSERT INTO game
       (player1, player2, player3, player4, uma1, uma2, west_in, tobi, status)
       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+      RETURNING id
     `;
 
     const values = [
@@ -22,8 +23,10 @@ async function insertGame({ players, uma, westIn, tobi}) {
       0
     ];
 
-    const [result] = await db.query(sql, values);
-    return result.insertId;
+    // const [result] = await db.query(sql, values);
+    // return result.insertId;
+    const result = await db.query(sql, values);
+    return result.rows[0].id;
 }
 
 /*
