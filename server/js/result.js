@@ -25,6 +25,12 @@ document.addEventListener("DOMContentLoaded", async() => {
 
 });
 
+document.getElementById('closeBtn').addEventListener('click', () => {
+  // 次の画面へ遷移
+  window.location.href = 'home.html';
+});
+
+
 /* 結果取得リクエスト */
 async function sendGetResult() {
   const res = await fetch("/api/get-result", {

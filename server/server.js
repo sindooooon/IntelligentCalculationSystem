@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require("cors");
 
 const app = express();
-const PORT = 30000;
+const PORT = process.env.PORT || 30000;
 
 app.use(cors());
 // JSON受け取り
