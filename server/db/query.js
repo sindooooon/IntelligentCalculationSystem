@@ -7,7 +7,7 @@ async function insertGame({ players, uma, westIn, tobi}) {
     const sql = `
       INSERT INTO game
       (player1, player2, player3, player4, uma1, uma2, west_in, tobi, status)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
     `;
 
     const values = [
@@ -41,7 +41,7 @@ async function getPlayerByGameId(gameId) {
       west_in,
       tobi
     FROM game
-    WHERE id = ?
+    WHERE id = $1
   `;
 
   const [rows] = await db.query(sql, [gameId]);
@@ -55,7 +55,7 @@ async function getPlayerByGameId(gameId) {
 ゲームステータス更新
 */
 async function updateGameStatus(gameId, status) {
-  const sql = `UPDATE game SET status = ? WHERE id = ?`;
+  const sql = `UPDATE game SET status = ? WHERE id = $1`;
   const values = [status, gameId];
 
   await db.query(sql, values);
@@ -73,8 +73,8 @@ async function getPointList(isParent, isTsumo, hanId) {
         MIN(point1) AS point1,
         MIN(point2) AS point2
       FROM point_list
-      WHERE parent = ?
-      AND tsumo = ?
+      WHERE parent = $1
+      AND tsumo = $2
       AND han > 4
       GROUP BY han
     `;
@@ -92,9 +92,9 @@ async function getPointList(isParent, isTsumo, hanId) {
         point1,
         point2
       FROM point_list
-      WHERE parent = ?
-      AND tsumo = ?
-      AND han = ?
+      WHERE parent = $1
+      AND tsumo = $2
+      AND han = $3
     `;
 
     values = [
@@ -115,7 +115,7 @@ async function insertResult({gameId, wind, kyoku, homba, kyotaku, end, east_poin
     const sql = `
       INSERT INTO kyoku
       (game_id, wind, kyoku, homba, kyotaku, end, east_point, south_point, west_point, north_point, tobi_player, tobi_get)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
     `;
 
     const values = [
