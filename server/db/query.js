@@ -47,7 +47,9 @@ async function getPlayerByGameId(gameId) {
     WHERE id = $1
   `;
 
-  const [rows] = await db.query(sql, [gameId]);
+  // const [rows] = await db.query(sql, [gameId]);
+  const result = await db.query(sql, [gameId]);
+  const rows = result.rows;
   if (rows.length !== 1) {
     return null;
   }
@@ -107,7 +109,8 @@ async function getPointList(isParent, isTsumo, hanId) {
     ];
   }
 
-  const [rows] = await db.query(sql, values);
+  const result = await db.query(sql, values);
+  const rows = result.rows;
   return rows;
 }
 
@@ -136,7 +139,7 @@ async function insertResult({gameId, wind, kyoku, homba, kyotaku, end, east_poin
       tobi_get
     ];
 
-    const [result] = await db.query(sql, values);
+    const result = await db.query(sql, values);
     // console.log("DBresponse");
     // console.log(result);
     return result;
@@ -170,7 +173,8 @@ async function getResult() {
   LIMIT 1;
   `;
 
-  const [rows] = await db.query(sql);
+  const result = await db.query(sql);
+  const rows = result.rows;
   if (rows.length !== 1) {
     return null;
   }
