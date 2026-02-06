@@ -1,0 +1,341 @@
+/* ===== 全体 ===== */
+/* ===== 画面全体 ===== */
+.screen {
+  min-height: 100vh;
+  padding-top: calc(env(safe-area-inset-top) + 12px);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 12px);
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  flex: 1;
+  /* justify-content: space-between; */
+}
+
+/* ===== 局情報 ===== */
+.round-info-top {
+  display: flex;
+  gap: 6px;
+  transform: translateY(120%);
+}
+
+.round-info-bottom {
+  display: flex;
+  gap: 6px;
+  transform: translateY(-120%);
+}
+
+.info-box {
+  flex: 1;
+  min-width: 96px; 
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* ===== 卓 ===== */
+.table {
+  position: relative;
+  width: 100%;
+  /* height: 420px; */
+
+  flex: 1;              /* ← 高さを画面に合わせる */
+  min-height: 520px;    /* ← 小さい画面でも崩れ防止 */
+}
+
+/* ===== プレイヤー位置 ===== */
+.player {
+  position: absolute;
+  display: flex;
+}
+
+.player-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.top {
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottom {
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.left {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ===== 中身 ===== */
+.player-inner {
+  text-align: center;
+}
+
+.player.right .player-inner {
+  transform:
+    rotate(-90deg)
+    translateY(30%); /* ← 外へ逃がす */
+  transform-origin: center;
+}
+
+.player.left .player-inner {
+  transform:
+    rotate(90deg)
+    translateY(30%); /* ← 外へ逃がす */
+  transform-origin: center;
+}
+
+/* 回転 */
+.rotate-left { transform: rotate(-90deg); }
+.rotate-right { transform: rotate(90deg); }
+.rotate-180 { transform: rotate(180deg); }
+
+/* ===== 表示 ===== */
+.wind {
+  background: rgba(0,0,0,0.1);
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* ===== 点数中央基準 ===== */
+.score-anchor {
+  display: flex;
+  justify-content: center; /* ← ここが中央線 */
+}
+
+/* ===== 点数＋差 ===== */
+.score-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 点数 */
+.score {
+  width: 150px;
+  padding: 10px;
+  border-radius: 36px;
+  border: 4px solid #000;
+  background: rgba(255,255,255,0.4);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.score.active {
+  background: rgb(225, 2, 121);
+}
+
+.score.diff {
+  color: rgb(75, 87, 255);
+}
+
+/* ===== 差（三角） ===== */
+.diff-btn {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  background: none;
+  padding: 0;
+}
+
+.diff-btn.up {
+  border-width: 0 32px 48px 32px;
+  border-color: transparent transparent #9ee6cc transparent;
+}
+
+.diff-btn.left-btn {
+  border-width: 32px 48px 32px 0;
+  border-color: transparent #9ee6cc transparent transparent;
+  transform: rotate(90deg);
+}
+
+.diff-btn.right-btn {
+  border-width: 32px 0 32px 48px;
+  border-color: transparent transparent transparent #9ee6cc;
+  transform: rotate(-90deg);
+}
+
+.diff-btn.up.active {
+  border-color: transparent transparent rgb(47, 255, 0) transparent;
+}
+.diff-btn.left-btn.active {
+  border-color: transparent rgb(47, 255, 0)transparent transparent;
+}
+.diff-btn.right-btn.active {
+  border-color: transparent transparent transparent rgb(47, 255, 0);
+}
+
+
+/* ===== 中央操作 ===== */
+.center-actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.center-btn {
+  padding: 10px 20px;
+  border-radius: 16px;
+  border: 3px solid #fff;
+  background: rgba(255,255,255,0.5);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+
+/* ===== モーダル共通 ===== */
+/* ===== モーダル共通 ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+.modal {
+  width: 90%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 16px;
+}
+
+/* ヘッダー */
+.modal-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* タイトル中央 */
+  margin-bottom: 20px;
+}
+
+/* タイトル */
+.modal-title {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* 閉じるボタン */
+.modal-close-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* hover / active */
+.modal-close-btn:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.modal-close-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* 内容 */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ===== リストボタン ===== */
+.score-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 16px;
+  border: 3px solid #7ec7f2;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  /* background-color: #7ec7f2; */
+}
+
+.score-list-item span {
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+.score-list-item.green {
+  background-color: #9ee6cc;
+}
+
+.score-list-item.light-blue {
+  background-color: #7ec7f2;
+}
+
+.score-list-item.thin {
+  font-size: 20px;
+  padding: 4px 10px;
+}
+
+/* ===== リストラベル ===== */
+.score-list-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 18px;
+  /* border-radius: 16px; 四角*/
+  border: 3px solid #000;
+  font-size: 22px;
+  font-weight: bold;
+}
+

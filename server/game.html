@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game</title>
+
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/game.css" />
+</head>
+<body>
+
+<div class="screen">
+  <div class="container game">
+
+    <!-- 上部局情報 -->
+    <div class="round-info round-info-top" id="round-info-top">
+
+    </div>
+
+    <!-- 卓 -->
+    <div class="table">
+
+      <!-- 既存プレイヤーUI（省略なし） -->
+      <!-- ※ ここはあなたの現在のものをそのまま -->
+             <!-- 上 -->
+      <div class="player top" id="player-top">
+        <div class="player-inner rotate-180">
+          <div class="player-label">
+            <div class="wind"></div>
+            <div class="name"></div>
+          </div>
+          <div class="score-anchor">
+            <div class="score-row">
+              <div class="score" id="score-top" data-score></div>
+              <button class="diff-btn up" id="diff-btn-top" diff-btn></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右 -->
+      <div class="player right" id="player-right">
+        <div class="player-inner rotate-left">
+          <div class="player-label">
+            <div class="wind"></div>
+            <div class="name"></div>
+          </div>
+
+          <div class="score-anchor">
+            <div class="score-row">
+              <div class="score" id="score-right" data-score></div>
+              <button class="diff-btn right-btn" id="diff-btn-right" diff-btn></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 下 -->
+      <div class="player bottom" id="player-bottom">
+        <div class="player-inner">
+          <div class="player-label">         
+            <div class="wind"></div>
+            <div class="name"></div>
+          </div>
+
+          <div class="score-anchor">
+            <div class="score-row">
+              <div class="score" id="score-bottom" data-score></div>
+              <button class="diff-btn up" id="diff-btn-bottom" diff-btn></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 左 -->
+      <div class="player left" id="player-left">
+        <div class="player-inner rotate-right">
+          <div class="player-label">
+            <div class="wind"></div>
+            <div class="name"></div>
+          </div>
+          <div class="score-anchor">
+            <div class="score-row">
+              <div class="score" id="score-left" data-score></div>
+              <button class="diff-btn left-btn" id="diff-btn-left" diff-btn></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- 中央 -->
+      <div class="center-actions">
+        <button class="center-btn" id="winBtn">和了</button>
+        <button class="center-btn" id="ryukyokuBtn">流局</button>
+      </div>
+
+    </div>
+
+    <!-- 下部局情報 -->
+    <div class="round-info round-info-bottom" id="round-info-bottom">
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== モーダル共通 ===== -->
+<div class="modal-overlay hidden" id="modalOverlay">
+
+  <div class="modal">
+
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">和了者を選択</div>
+      <button class="modal-close-btn" id="modalCloseBtn">×</button>
+    </div>
+    <div class="modal-content" id="modalContent">
+      <!-- JSで差し替え -->
+    </div>
+
+  </div>
+</div>
+
+<script src="js/game.js"></script>
+</body>
+</html>

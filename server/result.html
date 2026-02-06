@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Result</title>
+  <link rel="stylesheet" href="css/result.css">
+  <link rel="stylesheet" href="css/game.css" />
+</head>
+<body>
+
+<div class="result-container">
+  <div class="result-header">
+    <h1 class="result-title">ゲーム結果</h1>
+    <button class="close-btn" id="closeBtn">×</button>
+  </div>
+
+
+  <table class="result-table">
+
+    <tr class="yellow-row">
+      <th>名前</th>
+      <td data-name id="player-1"></td>
+      <td data-name id="player-2"></td>
+      <td data-name id="player-3"></td>
+      <td data-name id="player-4"></td>
+    </tr>
+
+    <tr>
+      <th>順位</th>
+      <td data-rank id="rank-1"></td>
+      <td data-rank id="rank-2"></td>
+      <td data-rank id="rank-3"></td>
+      <td data-rank id="rank-4"></td>
+    </tr>
+
+    <tr>
+      <th>持点</th>
+      <td data-point id="real-point-1"></td>
+      <td data-point id="real-point-2"></td>
+      <td data-point id="real-point-3"></td>
+      <td data-point id="real-point-4"></td>
+    </tr>
+
+    <tr>
+      <th>素点</th>
+      <td data-base id="point-1"></td>
+      <td data-base id="point-2"></td>
+      <td data-base id="point-3"></td>
+      <td data-base id="point-4"></td>
+    </tr>
+
+    <tr>
+      <th>オカ</th>
+      <td data-oka id="oka-1"></td>
+      <td data-oka id="oka-2"></td>
+      <td data-oka id="oka-3"></td>
+      <td data-oka id="oka-4"></td>
+    </tr>
+    
+    <tr>
+      <th>ウマ</th>
+      <td data-uma id="uma-1"></td>
+      <td data-uma id="uma-2"></td>
+      <td data-uma id="uma-3"></td>
+      <td data-uma id="uma-4"></td>
+    </tr>
+
+    <tr id="tobi" hidden>
+      <th>トビ</th>
+      <td data-tobi id="tobi-1"></td>
+      <td data-tobi id="tobi-2"></td>
+      <td data-tobi id="tobi-3"></td>
+      <td data-tobi id="tobi-4"></td>
+    </tr>
+
+    <tr class="yellow-row">
+      <th>合計</th>
+      <td data-total id="result-1"></td>
+      <td data-total id="result-2"></td>
+      <td data-total id="result-3"></td>
+      <td data-total id="result-4"></td>
+    </tr>
+  </table>
+</div>
+<script src="js/result.js"></script>
+
+</body>
+</html>

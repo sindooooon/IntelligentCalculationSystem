@@ -1,0 +1,76 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #7ec7f2;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.result-container {
+  height: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.result-title {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 32px;
+}
+
+.result-table {
+  width: 100%;
+  height: calc(100% - 80px);
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.result-table th,
+.result-table td {
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 20px;
+  padding: 2px;
+}
+
+.result-table th {
+  background: #f1f3f5;
+  font-weight: bold;
+  width: 15%;
+}
+
+.result-table th.player {
+  background: #e9ecef;
+}
+
+.result-table td {
+  width: 21.25%;
+}
+
+.yellow-row th,
+.yellow-row td {
+  background: #fff3bf;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+/* 閉じるボタン */
+.close-btn {
+  position: absolute;
+  right: 24px;
+  top: 7%;
+  transform: translateY(-50%);
+
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 65px;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+}

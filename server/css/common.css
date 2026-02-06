@@ -1,0 +1,51 @@
+/* ===== 共通リセット ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== スマホ前提 ===== */
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+/* ===== 画面全体 ===== */
+.screen {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #7ec7f2; /* ← 全画面共通の青 */
+  display: flex;
+  flex-direction: column;
+
+  /* ★ 追加：画面外周の余白（共通） */
+  padding: 12px;
+}
+
+/* ===== 中央寄せ（必要な画面だけで使う） ===== */
+.screen-center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== コンテンツ最大幅 ===== */
+.container {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+/* ===== テキスト中央 ===== */
+.text-center {
+  text-align: center;
+}
+
+.title-box {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #000;
+}
+

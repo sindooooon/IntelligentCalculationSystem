@@ -1,0 +1,132 @@
+/* ===== 全体 ===== */
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ===== タイトル ===== */
+.title-box {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* ===== プレイヤー ===== */
+.players {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.player-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wind {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 44px;
+  font-weight: bold;
+  background: rgba(255,255,255,0.4);
+}
+
+.name-box {
+  flex: 1;
+  height: 48px;
+  border: 2px solid #fff;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.4);
+  text-align: center;
+  font-size: 16px;
+  outline: none;
+}
+
+/* ===== 設定項目 ===== */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-row {
+  display: flex;
+  gap: 12px;
+}
+
+.option-label {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 2px solid #fff;
+  background: rgba(255,255,255,0.4);
+}
+
+.option-values {
+  flex: 1;
+  display: flex;
+  gap: 8px;
+}
+
+.option-values.two .option-input {
+  width: 50%;
+}
+
+.option-input {
+  flex: 1;
+  height: 44px;
+  border: 2px solid #fff;
+  background: rgba(255,255,255,0.4);
+  text-align: center;
+  font-size: 16px;
+  outline: none;
+}
+
+/* ===== スタート ===== */
+.start-area {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.start-button {
+  width: 80%;
+  height: 64px;
+  background-color: #9ee6cc;
+  border: 4px solid #000;
+  border-radius: 32px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* 西入：数値 + 固定ラベル */
+.option-combo {
+  display: flex;
+  align-items: center;
+  border: 2px solid #fff;
+  background: rgba(255,255,255,0.4);
+}
+
+.option-combo .option-input {
+  border: none;
+  background: transparent;
+  flex: 1;
+  height: 44px;
+  text-align: right;
+  font-size: 16px;
+  outline: none;
+}
+
+.option-suffix {
+  padding: 0 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+

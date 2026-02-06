@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings</title>
+
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/setting.css">
+</head>
+<body>
+
+  <div class="screen">
+    <div class="container settings">
+
+      <!-- タイトル -->
+      <div class="text-center">
+        <div class="title-box">
+          ゲーム設定
+        </div>
+      </div>
+
+      <!-- プレイヤー名 -->
+      <div class="players">
+        <div class="player-row">
+          <div class="wind">東</div>
+          <input class="name-box" type="text" maxlength="5" placeholder="名前">
+        </div>
+        <div class="player-row">
+          <div class="wind">南</div>
+          <input class="name-box" type="text" maxlength="5" placeholder="名前">
+        </div>
+        <div class="player-row">
+          <div class="wind">西</div>
+          <input class="name-box" type="text" maxlength="5" placeholder="名前">
+        </div>
+        <div class="player-row">
+          <div class="wind">北</div>
+          <input class="name-box" type="text" maxlength="5" placeholder="名前">
+        </div>
+      </div>
+
+      <!-- 設定項目 -->
+      <div class="options">
+
+        <!-- ウマ（2列） -->
+        <div class="option-row">
+          <div class="option-label">ウマ</div>
+          <div class="option-values two">
+            <input class="option-input" type="number" maxlength="2" value="10" id="uma-1">
+            <input class="option-input" type="number" maxlength="2" value="20" id="uma-2">
+          </div>
+        </div>
+
+        <!-- 西入 -->
+        <div class="option-row">
+          <div class="option-label">西入</div>
+            <div class="option-combo wide">
+            <input class="option-input" type="number" maxlength="5" value="30000" id="west-in">
+            <div class="option-suffix">点未満</div>
+          </div>
+        </div>
+
+
+        <!-- トビ傷 -->
+        <div class="option-row">
+          <div class="option-label">トビ傷</div>
+          <div class="option-values">
+            <input class="option-input" type="number" maxlength="2" value="10" id="tobi">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- スタート -->
+      <div class="start-area">
+        <button class="start-button" id="start-button">スタート</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/setting.js"></script>
+</body>
+</html>
