@@ -60,7 +60,7 @@ async function getPlayerByGameId(gameId) {
 ゲームステータス更新
 */
 async function updateGameStatus(gameId, status) {
-  const sql = `UPDATE game SET status = ? WHERE id = $1`;
+  const sql = `UPDATE game SET status = $1 WHERE id = $2`;
   const values = [status, gameId];
 
   await db.query(sql, values);
