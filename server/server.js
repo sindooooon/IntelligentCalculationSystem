@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require("cors");
 const path = require("path");
+const basicAuth = require('express-basic-auth');
 
 const app = express();
 const PORT = process.env.PORT || 30000;
@@ -8,6 +9,13 @@ const PORT = process.env.PORT || 30000;
 app.use(cors());
 // JSON受け取り
 app.use(express.json());
+
+app.use(basicAuth({
+  users:{
+    [process.env.BASIC_USER]:process.env.BASIC_PASS
+  },
+  challenge: true,
+}))
 
 // ★ 静的ファイル配信（ここが超重要）
 app.use(express.static(__dirname));
